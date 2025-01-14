@@ -29,10 +29,23 @@ defmodule MossPigletWeb.CustomComponents do
     <.simple_form for={@form} id={@id} phx-change={@phx_change} phx-submit={@phx_submit}>
       <div class="px-4 py-6 space-y-4 border-2 border-brand-700 rounded-md">
         <h2 class="mb-2 b-2 border-b-2 border-brand-700">Contact Information</h2>
-        <.input field={@form[:name]} label="Name" autocomplete="off" required />
-        <.input field={@form[:company]} label="Company" autocomplete="off" required />
-        <.input field={@form[:email]} type="email" label="Email" autocomplete="off" required />
-        <.input field={@form[:website]} label="Website" autocomplete="off" />
+        <.input field={@form[:name]} label="Name" autocomplete="off" required phx-debounce="blur" />
+        <.input
+          field={@form[:company]}
+          label="Company"
+          autocomplete="off"
+          required
+          phx-debounce="blur"
+        />
+        <.input
+          field={@form[:email]}
+          type="email"
+          label="Email"
+          autocomplete="off"
+          required
+          phx-debounce="blur"
+        />
+        <.input field={@form[:website]} label="Website" autocomplete="off" phx-debounce="blur" />
       </div>
 
       <div class="px-4 py-6 space-y-4 bg-gradient-to-r from-brand-300 to-brand-500 border-2 border-brand-700 rounded-md">
@@ -44,6 +57,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="informational, e-commerce, portfolio, etc."
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:features]}
@@ -52,6 +66,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="contact forms, galleries, blogs, e-commerce functionality, etc."
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:audience]}
@@ -59,6 +74,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="demographics, interests, etc."
           required
+          phx-debounce="blur"
         />
       </div>
 
@@ -71,6 +87,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="logos, color schemes, fonts, etc."
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:admire]}
@@ -78,6 +95,7 @@ defmodule MossPigletWeb.CustomComponents do
           label="List 3 websites you admire and why:"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:style]}
@@ -86,6 +104,7 @@ defmodule MossPigletWeb.CustomComponents do
           prompt="Choose a style"
           options={[Professional: "professional", Casual: "casual", Modern: "modern", Other: "other"]}
           required
+          phx-debounce="blur"
         />
       </div>
 
@@ -96,6 +115,7 @@ defmodule MossPigletWeb.CustomComponents do
           label="Who will provide the content for the website (text, images, videos, etc.)?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:assistance]}
@@ -103,12 +123,14 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="Yes, with copywriting et al. / No, we will provide our own content."
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:key_info]}
           label="What key messages or info must be included on your website?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
       </div>
 
@@ -120,6 +142,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="WordPress, Shopify, etc."
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:integrations]}
@@ -127,6 +150,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="payment gateways, CRM systems, social media"
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:hosting]}
@@ -134,6 +158,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="I have a provider... / I need recommendations"
           required
+          phx-debounce="blur"
         />
       </div>
 
@@ -144,12 +169,14 @@ defmodule MossPigletWeb.CustomComponents do
           label="What is your budget for this project?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:timeline]}
           label="What is your desired timeline for completion?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:milestones]}
@@ -157,6 +184,7 @@ defmodule MossPigletWeb.CustomComponents do
           label="Are there any critical milestones we should be aware of?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
       </div>
 
@@ -167,12 +195,14 @@ defmodule MossPigletWeb.CustomComponents do
           type="checkbox"
           label="Ongoing maintenance and support?"
           autocomplete="off"
+          phx-debounce="blur"
         />
         <.input
           field={@form[:future_updates]}
           label="Who will be responsible for updating the website content?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
       </div>
 
@@ -184,6 +214,7 @@ defmodule MossPigletWeb.CustomComponents do
           label="Is there anything else we should know about your business or project?"
           autocomplete="off"
           required
+          phx-debounce="blur"
         />
         <.input
           field={@form[:referral]}
@@ -191,6 +222,7 @@ defmodule MossPigletWeb.CustomComponents do
           autocomplete="off"
           placeholder="referral, search engine, social media, etc."
           required
+          phx-debounce="500"
         />
       </div>
 

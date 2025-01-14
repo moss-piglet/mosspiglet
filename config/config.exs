@@ -17,6 +17,8 @@ config :moss_piglet,
   app_name: "Moss Piglet",
   logo_for_emails:
     "https://res.cloudinary.com/metamorphic/image/upload/v1736868228/MossPiglet_Stacked_OnLight_gute1c.png",
+  seo_description:
+    "Superchare your webness. Whether you have an existing website or just an idea, we offer custom solutions tailored to your needs. From simple websites to complex web apps with end-to-end encryption, we can build it for you.",
   support_email: "support@mosspiglet.dev"
 
 # Configures the endpoint

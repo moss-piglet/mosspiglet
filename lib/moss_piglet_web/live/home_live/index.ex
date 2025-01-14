@@ -2,6 +2,10 @@ defmodule MossPigletWeb.HomeLive.Index do
   use MossPigletWeb, :live_view
 
   def mount(_params, _session, socket) do
+    socket =
+      socket
+      |> assign(:page_title, "Oh, hey!")
+
     {:ok, socket, layout: {MossPigletWeb.Layouts, :landing}}
   end
 
@@ -625,7 +629,7 @@ defmodule MossPigletWeb.HomeLive.Index do
           <p class="mt-6 text-base/7 text-gray-600">
             Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
             <.link
-              href="mailto:hello@mosspiglet.dev"
+              href="mailto:support@mosspiglet.dev"
               class="font-semibold text-emerald-600 hover:text-emerald-500"
             >
               sending us an email
@@ -698,7 +702,7 @@ defmodule MossPigletWeb.HomeLive.Index do
               answer="Included when paying by retainer, we can provide training based on your needs: from maintenance and updates to full-stack software development with the Elixir programming language."
             />
             <.faq_question
-              question="Can I hire you just for taining?"
+              question="Can I hire you just for training?"
               answer="Yes, you can hire us on retainer for training."
             />
           </dl>
