@@ -1,0 +1,31 @@
+<h1>New Client!</h1>
+
+<p>Below please see their intake form:</p>
+
+<EmailComponents.dotted_gray_box>
+  <%!-- list all fields from form here --%>
+  <p><b>Name: </b>{@email.assigns["name"]}</p>
+  <p><b>Company: </b>{@email.assigns["company"]}</p>
+  <p><b>Email: </b>{@email.assigns["email"]}</p>
+  <p><b>Website: </b>{@email.assigns["website"]}</p>
+  <ul>
+    <p><b>Goal: </b>{@email.assigns["goal"]}</p>
+    <p><b>Features: </b>{@email.assigns["features"]}</p>
+    <p><b>Audience: </b>{@email.assigns["audience"]}</p>
+    <p><b>Branding: </b>{@email.assigns["branding"]}</p>
+    <p><b>Admire: </b>{@email.assigns["admire"]}</p>
+    <p><b>Style: </b>{@email.assigns["style"]}</p>
+    <p><b>Content: </b>{@email.assigns["content"]}</p>
+    <p><b>Assistance: </b>{@email.assigns["assistance"]}</p>
+    <p><b>Key_info: </b>{@email.assigns["key_info"]}</p>
+    <p><b>Cms: </b>{@email.assigns["cms"]}</p>
+    <p><b>Integrations: </b>{@email.assigns["integrations"]}</p>
+    <p><b>Hosting: </b>{@email.assigns["hosting"]}</p>
+    <p><b>Budget: </b>{@email.assigns["budget"]}</p>
+    <p><b>Milestones: </b>{@email.assigns["milestones"]}</p>
+    <p><b>Support: </b>{@email.assigns["support"]}</p>
+    <p><b>Future_updates: </b>{@email.assigns["future_updates"]}</p>
+    <p><b>Extra_info: </b>{@email.assigns["extra_info"]}</p>
+    <p><b>Referral: </b>{@email.assigns["referral"]}</p>
+  </ul>
+</EmailComponents.dotted_gray_box>
