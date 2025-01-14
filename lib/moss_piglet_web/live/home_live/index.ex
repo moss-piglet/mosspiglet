@@ -2,6 +2,10 @@ defmodule MossPigletWeb.HomeLive.Index do
   use MossPigletWeb, :live_view
 
   def mount(_params, _session, socket) do
+    socket =
+      socket
+      |> assign(:page_title, "Oh, hey!")
+
     {:ok, socket, layout: {MossPigletWeb.Layouts, :landing}}
   end
 
@@ -55,13 +59,15 @@ defmodule MossPigletWeb.HomeLive.Index do
                     rel="noopener"
                     class="inline-flex space-x-6"
                   >
-                    <span class="rounded-full bg-emerald-600/10 px-3 py-1 text-sm/6 font-semibold text-emerald-600 ring-1 ring-inset ring-emerald-600/10">
+                    <span class="rounded-full bg-emerald-600/10 px-3 py-1 text-xs/6 sm:text-sm/6 font-semibold text-emerald-600 ring-1 ring-inset ring-emerald-600/10">
                       What's new
                     </span>
-                    <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-600">
-                      <span>Just shipped Mosslet v0.8</span>
+                    <span class="inline-flex items-center space-x-2 text-xs/6 sm:text-sm/6 font-medium text-gray-600 group">
+                      <span class="group-hover:text-emerald-600 dark:group-hover-text-emerald-400">
+                        Shipped Mosslet v0.17 🚀
+                      </span>
                       <svg
-                        class="size-5 text-gray-400"
+                        class="size-5 text-gray-400 group-hover:text-emerald-600 dark:group-hover-text-emerald-400"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                         aria-hidden="true"
@@ -89,11 +95,14 @@ defmodule MossPigletWeb.HomeLive.Index do
                   >
                     New Inquiry
                   </.link>
-                  <%!-- TODO: Public Git Repo
-                  <.link navigate={~p"/new-inquiry"} class="text-sm/6 font-semibold text-gray-900">
+                  <.link
+                    href="https://github.com/moss-piglet/mosspiglet"
+                    class="text-sm/6 font-semibold text-gray-900"
+                    target="_blank"
+                    rel="noopener"
+                  >
                     View on GitHub <span aria-hidden="true">→</span>
                   </.link>
-                  --%>
                 </div>
               </div>
             </div>
@@ -625,7 +634,7 @@ defmodule MossPigletWeb.HomeLive.Index do
           <p class="mt-6 text-base/7 text-gray-600">
             Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
             <.link
-              href="mailto:hello@mosspiglet.dev"
+              href="mailto:support@mosspiglet.dev"
               class="font-semibold text-emerald-600 hover:text-emerald-500"
             >
               sending us an email
@@ -698,7 +707,7 @@ defmodule MossPigletWeb.HomeLive.Index do
               answer="Included when paying by retainer, we can provide training based on your needs: from maintenance and updates to full-stack software development with the Elixir programming language."
             />
             <.faq_question
-              question="Can I hire you just for taining?"
+              question="Can I hire you just for training?"
               answer="Yes, you can hire us on retainer for training."
             />
           </dl>

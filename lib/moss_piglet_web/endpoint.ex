@@ -23,8 +23,12 @@ defmodule MossPigletWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :moss_piglet,
-    gzip: false,
+    gzip: not code_reloading?,
     only: MossPigletWeb.static_paths()
+
+  if Code.ensure_loaded?(Tidewave) do
+    plug Tidewave
+  end
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

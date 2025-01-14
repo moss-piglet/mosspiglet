@@ -17,6 +17,8 @@ config :moss_piglet,
   app_name: "Moss Piglet",
   logo_for_emails:
     "https://res.cloudinary.com/metamorphic/image/upload/v1736868228/MossPiglet_Stacked_OnLight_gute1c.png",
+  seo_description:
+    "Superchare your webness. Whether you have an existing website or just an idea, we offer custom solutions tailored to your needs. From simple websites to complex web apps with end-to-end encryption, we can build it for you.",
   support_email: "support@mosspiglet.dev"
 
 # Configures the endpoint
@@ -51,14 +53,14 @@ config :esbuild,
 
 # Configure tailwind (the version is required)
 config :tailwind,
-  version: "3.4.3",
+  version: "4.1.7",
   moss_piglet: [
     args: ~w(
       --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
+      --input=assets/css/app.css
+      --output=priv/static/assets/css/app.css
     ),
-    cd: Path.expand("../assets", __DIR__)
+    cd: Path.expand("..", __DIR__)
   ]
 
 # Configures Elixir's Logger

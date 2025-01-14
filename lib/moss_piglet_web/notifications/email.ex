@@ -7,7 +7,7 @@ defmodule MossPigletWeb.Notifications.Email do
 
   def new_intake_email(email, form) do
     base_email()
-    |> from(email)
+    |> from("mossy@mosspiglet.dev")
     |> subject("New Client! Intake Form Submission")
     |> reply_to(email)
     |> render_body("new_client_intake.html", form)
