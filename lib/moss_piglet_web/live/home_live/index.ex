@@ -93,11 +93,14 @@ defmodule MossPigletWeb.HomeLive.Index do
                   >
                     New Inquiry
                   </.link>
-                  <%!-- TODO: Public Git Repo
-                  <.link navigate={~p"/new-inquiry"} class="text-sm/6 font-semibold text-gray-900">
+                  <.link
+                    href="https://github.com/moss-piglet/mosspiglet"
+                    class="text-sm/6 font-semibold text-gray-900"
+                    target="_blank"
+                    rel="noopener"
+                  >
                     View on GitHub <span aria-hidden="true">→</span>
                   </.link>
-                  --%>
                 </div>
               </div>
             </div>
