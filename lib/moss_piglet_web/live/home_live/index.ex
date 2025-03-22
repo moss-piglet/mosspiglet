@@ -63,7 +63,7 @@ defmodule MossPigletWeb.HomeLive.Index do
                       What's new
                     </span>
                     <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-600">
-                      <span>Shipped Mosslet v0.8</span>
+                      <span>Shipped Mosslet v0.8.5</span>
                       <svg
                         class="size-5 text-gray-400"
                         viewBox="0 0 20 20"
