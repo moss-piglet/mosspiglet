@@ -17,12 +17,12 @@ defmodule MossPigletWeb.InquiryLive.Index do
 
     socket =
       socket
-      |> assign(:page_title, "New Client Inquiry")
+      |> assign(:page_title, "Let's Build Something Great")
       |> assign(:form, to_form(changeset))
       |> assign(:contact, contact)
       |> assign(
         :description,
-        "Take a moment to fill out the intake form below to see if we can help. We'll be in touch within 24-48 business hours (M-F)."
+        "Tell us about your project and we'll get back to you within 24-48 hours."
       )
 
     {:noreply, socket}
@@ -30,22 +30,19 @@ defmodule MossPigletWeb.InquiryLive.Index do
 
   def render(assigns) do
     ~H"""
-    <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <div
-        class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-        aria-hidden="true"
-      >
-        <div
-          class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#6ee7b7] to-[#10b981] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
-          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-        >
+    <div class="min-h-screen bg-gradient-to-b from-emerald-50/50 to-white">
+      <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <.heading page_title={@page_title} description={@description} />
+        <.intake_form form={@form} id="contact-form" phx_change="validate" phx_submit="save" />
+        <div class="mt-8 text-center">
+          <.link
+            navigate={~p"/"}
+            class="text-sm text-gray-500 hover:text-emerald-600 transition-colors"
+          >
+            ← Back to home
+          </.link>
         </div>
       </div>
-      <.heading page_title={@page_title} description={@description} />
-      <.intake_form form={@form} id="contact-form" phx_change="validate" phx_submit="save" />
-      <.back navigate={~p"/"}>
-        Back
-      </.back>
     </div>
     """
   end
@@ -66,7 +63,7 @@ defmodule MossPigletWeb.InquiryLive.Index do
           socket
           |> put_flash(
             :info,
-            "Thank you for reaching out, your email has been sent to us sucessfully! We will respond to you within 24-48 business hours (M-F). Have a great day! 🥳"
+            "Thank you! We've received your inquiry and will be in touch within 24-48 hours. 🎉"
           )
           |> push_navigate(to: ~p"/")
 
@@ -77,7 +74,7 @@ defmodule MossPigletWeb.InquiryLive.Index do
           socket
           |> put_flash(
             :error,
-            "Oh boy! There was an error sending your email. Please reach out to us directly at hello@mosspiglet.dev."
+            "Something went wrong. Please email us directly at hello@mosspiglet.dev."
           )
           |> push_navigate(to: ~p"/")
 

@@ -9,10 +9,10 @@ defmodule MossPigletWeb.CustomComponents do
   def heading(assigns) do
     ~H"""
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         {@page_title}
-      </h2>
-      <p class="mt-2 text-lg/8 text-gray-600">
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">
         {@description}
       </p>
     </div>
@@ -26,222 +26,125 @@ defmodule MossPigletWeb.CustomComponents do
 
   def intake_form(assigns) do
     ~H"""
-    <.simple_form for={@form} id={@id} phx-change={@phx_change} phx-submit={@phx_submit}>
-      <div class="px-4 py-6 space-y-4 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Contact Information</h2>
-        <.input field={@form[:name]} label="Name" autocomplete="off" required phx-debounce="blur" />
-        <.input
-          field={@form[:company]}
-          label="Company"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:email]}
-          type="email"
-          label="Email"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input field={@form[:website]} label="Website" autocomplete="off" phx-debounce="blur" />
-      </div>
+    <.simple_form for={@form} id={@id} phx-change={@phx_change} phx-submit={@phx_submit} class="mt-12">
+      <div class="space-y-8">
+        <div class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-900/5 p-6 sm:p-8">
+          <h2 class="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 text-sm font-bold">
+              1
+            </span>
+            Your Information
+          </h2>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <.input field={@form[:name]} label="Name" required phx-debounce="blur" />
+            <.input field={@form[:email]} type="email" label="Email" required phx-debounce="blur" />
+            <.input field={@form[:company]} label="Company" phx-debounce="blur" />
+            <.input
+              field={@form[:website]}
+              label="Website"
+              placeholder="https://"
+              phx-debounce="blur"
+            />
+          </div>
+        </div>
 
-      <div class="px-4 py-6 space-y-4 bg-gradient-to-r from-brand-300 to-brand-500 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Project Overview</h2>
-        <.input
-          field={@form[:goal]}
-          type="textarea"
-          label="What is the primary goal of your website?"
-          autocomplete="off"
-          placeholder="informational, e-commerce, portfolio, etc."
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:features]}
-          type="textarea"
-          label="What specific features do you want on your website?"
-          autocomplete="off"
-          placeholder="contact forms, galleries, blogs, e-commerce functionality, etc."
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:audience]}
-          label="Who is your target audience?"
-          autocomplete="off"
-          placeholder="demographics, interests, etc."
-          required
-          phx-debounce="blur"
-        />
-      </div>
+        <div class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-900/5 p-6 sm:p-8">
+          <h2 class="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 text-sm font-bold">
+              2
+            </span>
+            About Your Project
+          </h2>
+          <div class="space-y-6">
+            <.input
+              field={@form[:goal]}
+              type="textarea"
+              label="What are you looking to build?"
+              placeholder="Tell us about your project idea, goals, and what you're hoping to achieve..."
+              required
+              phx-debounce="blur"
+            />
+            <div class="grid gap-6 sm:grid-cols-2">
+              <.input
+                field={@form[:budget]}
+                type="select"
+                label="Budget Range"
+                prompt="Select a range"
+                options={[
+                  "$5k - $10k": "5k-10k",
+                  "$10k - $25k": "10k-25k",
+                  "$25k - $50k": "25k-50k",
+                  "$50k+": "50k+"
+                ]}
+                required
+                phx-debounce="blur"
+              />
+              <.input
+                field={@form[:timeline]}
+                type="select"
+                label="Timeline"
+                prompt="Select a timeline"
+                options={[
+                  ASAP: "asap",
+                  "1-2 months": "1-2-months",
+                  "3-6 months": "3-6-months",
+                  Flexible: "flexible"
+                ]}
+                phx-debounce="blur"
+              />
+            </div>
+          </div>
+        </div>
 
-      <div class="px-4 py-6 space-y-4 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Design Preferences</h2>
-        <.input
-          field={@form[:branding]}
-          type="textarea"
-          label="Do you have any existing branding materials?"
-          autocomplete="off"
-          placeholder="logos, color schemes, fonts, etc."
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:admire]}
-          type="textarea"
-          label="List 3 websites you admire and why:"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:style]}
-          type="select"
-          label="What style or tone do you want your website to convey?"
-          prompt="Choose a style"
-          options={[Professional: "professional", Casual: "casual", Modern: "modern", Other: "other"]}
-          required
-          phx-debounce="blur"
-        />
-      </div>
-
-      <div class="px-4 py-6 space-y-4 bg-gradient-to-r from-brand-300 to-brand-500 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Content</h2>
-        <.input
-          field={@form[:content]}
-          label="Who will provide the content for the website (text, images, videos, etc.)?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:assistance]}
-          label="Do you need assistance with content creation?"
-          autocomplete="off"
-          placeholder="Yes, with copywriting et al. / No, we will provide our own content."
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:key_info]}
-          label="What key messages or info must be included on your website?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-      </div>
-
-      <div class="px-4 py-6 space-y-4 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Technical Requirements</h2>
-        <.input
-          field={@form[:cms]}
-          label="Do you have a preferred content management system (CMS)?"
-          autocomplete="off"
-          placeholder="WordPress, Shopify, etc."
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:integrations]}
-          label="Do you need any specific integrations?"
-          autocomplete="off"
-          placeholder="payment gateways, CRM systems, social media"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:hosting]}
-          label="What is your hosting situation?"
-          autocomplete="off"
-          placeholder="I have a provider... / I need recommendations"
-          required
-          phx-debounce="blur"
-        />
-      </div>
-
-      <div class="px-4 py-6 space-y-4 bg-gradient-to-r from-brand-300 to-brand-500 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Budget and Timeline</h2>
-        <.input
-          field={@form[:budget]}
-          label="What is your budget for this project?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:timeline]}
-          label="What is your desired timeline for completion?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:milestones]}
-          type="textarea"
-          label="Are there any critical milestones we should be aware of?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-      </div>
-
-      <div class="px-4 py-6 space-y-4  border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Maintenance and Support</h2>
-        <.input
-          field={@form[:support]}
-          type="checkbox"
-          label="Ongoing maintenance and support?"
-          autocomplete="off"
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:future_updates]}
-          label="Who will be responsible for updating the website content?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-      </div>
-
-      <div class="px-4 py-6 space-y-4 bg-gradient-to-r from-brand-300 to-brand-500 border-2 border-brand-700 rounded-md">
-        <h2 class="mb-2 b-2 border-b-2 border-brand-700">Additional Information</h2>
-        <.input
-          field={@form[:extra_info]}
-          type="textarea"
-          label="Is there anything else we should know about your business or project?"
-          autocomplete="off"
-          required
-          phx-debounce="blur"
-        />
-        <.input
-          field={@form[:referral]}
-          label="How did you hear about us?"
-          autocomplete="off"
-          placeholder="referral, search engine, social media, etc."
-          required
-          phx-debounce="500"
-        />
+        <div class="bg-gray-50 rounded-2xl p-6 sm:p-8">
+          <h2 class="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 text-sm font-bold">
+              3
+            </span>
+            Additional Details <span class="ml-2 text-sm font-normal text-gray-500">(Optional)</span>
+          </h2>
+          <div class="space-y-6">
+            <.input
+              field={@form[:features]}
+              type="textarea"
+              label="Key features needed"
+              placeholder="User authentication, payment processing, dashboards, etc."
+              phx-debounce="blur"
+            />
+            <.input
+              field={@form[:extra_info]}
+              type="textarea"
+              label="Anything else we should know?"
+              placeholder="Share any other details that would help us understand your project better..."
+              phx-debounce="blur"
+            />
+            <.input
+              field={@form[:referral]}
+              label="How did you hear about us?"
+              placeholder="Google, referral, social media..."
+              phx-debounce="blur"
+            />
+          </div>
+        </div>
       </div>
 
       <:actions>
-        <.button
-          :if={!@form.source.valid?}
-          class="bg-gray-400 hover:bg-gray-400 cursor-not-allowed"
-          disabled
-          phx-disable-with="Sending..."
-          phx-submit="save"
-        >
-          Waiting on form completion...
-        </.button>
-        <.button :if={@form.source.valid?} phx-disable-with="Sending..." phx-submit="save">
-          Reach out
-        </.button>
-        <p class="text-sm text-gray-400">
-          We will never share or sell your information.
-        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+          <.button
+            class={[
+              "w-full sm:w-auto px-8 py-3 text-base",
+              !@form.source.valid? && "bg-gray-300 hover:bg-gray-300 cursor-not-allowed"
+            ]}
+            disabled={!@form.source.valid?}
+            phx-disable-with="Sending..."
+          >
+            Submit Inquiry
+          </.button>
+          <p class="text-sm text-gray-500">
+            <.icon name="hero-lock-closed-micro" class="w-4 h-4 inline-block mr-1" />
+            We'll never share your information.
+          </p>
+        </div>
       </:actions>
     </.simple_form>
     """

@@ -56,9 +56,8 @@ config :tailwind,
   version: "4.1.7",
   moss_piglet: [
     args: ~w(
-      --config=tailwind.config.js
       --input=assets/css/app.css
-      --output=priv/static/assets/css/app.css
+      --output=priv/static/assets/app.css
     ),
     cd: Path.expand("..", __DIR__)
   ]

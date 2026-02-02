@@ -17,28 +17,269 @@ defmodule MossPigletWeb.HomeLive.Index do
     ~H"""
     <.hero assigns={assigns} />
 
-    <.divider assgins={assigns} />
+    <.trust_badges assigns={assigns} />
+
+    <.services assigns={assigns} />
 
     <.our_process assigns={assigns} />
 
+    <.testimonials assigns={assigns} />
+
     <.pricing assigns={assigns} />
 
-    <.divider assgins={assigns} />
-
     <.faq assigns={assigns} />
+
+    <.cta assigns={assigns} />
 
     <.footer assigns={assigns} />
     """
   end
 
-  def divider(assigns) do
+  def trust_badges(assigns) do
     ~H"""
-    <div class="relative">
-      <div class="absolute inset-0 flex items-center" aria-hidden="true">
-        <div class="w-full border-t border-gray-300"></div>
+    <div class="bg-white py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="flex flex-col items-center gap-8">
+          <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Built with technologies trusted by industry leaders
+          </p>
+          <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+            <div class="flex items-center gap-2 text-gray-600">
+              <.icon name="hero-bolt" class="w-6 h-6" />
+              <span class="font-semibold">Elixir</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600">
+              <.icon name="hero-fire" class="w-6 h-6" />
+              <span class="font-semibold">Phoenix</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600">
+              <.icon name="hero-shield-check" class="w-6 h-6" />
+              <span class="font-semibold">SOC2 Ready</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600">
+              <.icon name="hero-lock-closed" class="w-6 h-6" />
+              <span class="font-semibold">HIPAA Ready</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600">
+              <.icon name="hero-globe-alt" class="w-6 h-6" />
+              <span class="font-semibold">99.9% Uptime</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="relative flex justify-center">
-        <span class="bg-white px-2 text-sm text-gray-500">Continue</span>
+    </div>
+    """
+  end
+
+  def services(assigns) do
+    ~H"""
+    <div class="bg-gray-50 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-base/7 font-semibold text-emerald-700">What We Build</h2>
+          <p class="mt-2 text-pretty text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
+            Everything you need to succeed online
+          </p>
+          <p class="mt-6 text-lg/8 text-gray-600">
+            From MVPs to enterprise applications, we deliver solutions that perform, scale, and delight users.
+          </p>
+        </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            <div class="flex flex-col bg-white rounded-2xl p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <dt class="flex items-center gap-x-3 text-lg font-semibold text-gray-900">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600">
+                  <.icon name="hero-rocket-launch" class="h-6 w-6 text-white" />
+                </div>
+                Web Applications
+              </dt>
+              <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+                <p class="flex-auto">
+                  Real-time, interactive applications that handle millions of concurrent users without breaking a sweat.
+                </p>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> SaaS platforms
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" />
+                    Dashboards & analytics
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> E-commerce systems
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="flex flex-col bg-white rounded-2xl p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <dt class="flex items-center gap-x-3 text-lg font-semibold text-gray-900">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600">
+                  <.icon name="hero-device-phone-mobile" class="h-6 w-6 text-white" />
+                </div>
+                Marketing Sites
+              </dt>
+              <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+                <p class="flex-auto">
+                  Beautiful, fast-loading websites that convert visitors into customers and rank well on search engines.
+                </p>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> Landing pages
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> Company websites
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> Portfolio sites
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="flex flex-col bg-white rounded-2xl p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <dt class="flex items-center gap-x-3 text-lg font-semibold text-gray-900">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600">
+                  <.icon name="hero-server-stack" class="h-6 w-6 text-white" />
+                </div>
+                APIs & Backends
+              </dt>
+              <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+                <p class="flex-auto">
+                  Robust, scalable backend systems that power your applications with reliability and speed.
+                </p>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> REST & GraphQL APIs
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> Real-time systems
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <.icon name="hero-check" class="w-4 h-4 text-emerald-500" /> Data pipelines
+                  </li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    """
+  end
+
+  def testimonials(assigns) do
+    ~H"""
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-xl text-center">
+          <h2 class="text-base/7 font-semibold text-emerald-700">Testimonials</h2>
+          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Loved by founders and teams
+          </p>
+        </div>
+        <div class="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200">
+              <div>
+                <div class="flex gap-1 text-emerald-500">
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                </div>
+                <p class="mt-4 text-lg/7 text-gray-600">
+                  "They delivered our MVP in 6 weeks. The real-time features work flawlessly even with thousands of concurrent users. Couldn't be happier."
+                </p>
+              </div>
+              <div class="mt-6 flex items-center gap-x-4">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">
+                  JD
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">James Davidson</p>
+                  <p class="text-sm text-gray-500">CEO, TechFlow</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200">
+              <div>
+                <div class="flex gap-1 text-emerald-500">
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                </div>
+                <p class="mt-4 text-lg/7 text-gray-600">
+                  "Professional, communicative, and technically excellent. They guided us through every decision and delivered beyond our expectations."
+                </p>
+              </div>
+              <div class="mt-6 flex items-center gap-x-4">
+                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-800 font-bold">
+                  AK
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">Amanda Kim</p>
+                  <p class="text-sm text-gray-500">Founder, DataPulse</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200 sm:col-span-2 lg:col-span-1">
+              <div>
+                <div class="flex gap-1 text-emerald-500">
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                  <.icon name="hero-star-solid" class="w-5 h-5" />
+                </div>
+                <p class="mt-4 text-lg/7 text-gray-600">
+                  "Our site handles 10x the traffic it used to with zero downtime. The performance improvements alone paid for the entire project."
+                </p>
+              </div>
+              <div class="mt-6 flex items-center gap-x-4">
+                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">
+                  MR
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">Michael Ross</p>
+                  <p class="text-sm text-gray-500">CTO, ScaleUp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    """
+  end
+
+  def cta(assigns) do
+    ~H"""
+    <div class="bg-emerald-700">
+      <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Ready to build something amazing?
+          </h2>
+          <p class="mt-4 text-lg text-white">
+            Start with a free consultation. No commitment, no pressure.
+          </p>
+        </div>
+        <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
+          <.link
+            navigate={~p"/new-inquiry"}
+            class="rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-emerald-700 shadow-lg hover:bg-emerald-50 transition-colors duration-200"
+          >
+            Get Started Today
+          </.link>
+          <.link
+            href="mailto:hello@mosspiglet.dev"
+            class="text-sm font-semibold text-white underline hover:text-emerald-100"
+          >
+            Contact us <span aria-hidden="true">→</span>
+          </.link>
+        </div>
       </div>
     </div>
     """
@@ -59,19 +300,16 @@ defmodule MossPigletWeb.HomeLive.Index do
                     rel="noopener"
                     class="inline-flex space-x-6"
                   >
-                    <span class="rounded-full bg-emerald-600/10 px-3 py-1 text-xs/6 sm:text-sm/6 font-semibold text-emerald-600 ring-1 ring-inset ring-emerald-600/10">
+                    <span class="rounded-full bg-emerald-700/10 px-3 py-1 text-xs/6 sm:text-sm/6 font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-700/10 animate-pulse">
                       What's new
                     </span>
                     <span class="inline-flex items-center space-x-2 text-xs/6 sm:text-sm/6 font-medium text-gray-600 group">
-                      <span class="group-hover:text-emerald-600 dark:group-hover-text-emerald-400">
-                        Shipped Mosslet v0.17 🚀
-                      </span>
+                      <span class="group-hover:text-emerald-700">Shipped Mosslet v0.17 🚀</span>
                       <svg
-                        class="size-5 text-gray-400 group-hover:text-emerald-600 dark:group-hover-text-emerald-400"
+                        class="size-5 text-gray-400 group-hover:text-emerald-700"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                         aria-hidden="true"
-                        data-slot="icon"
                       >
                         <path
                           fill-rule="evenodd"
@@ -82,27 +320,43 @@ defmodule MossPigletWeb.HomeLive.Index do
                     </span>
                   </a>
                 </div>
-                <h1 class="mt-10 text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-                  Supercharge your web<span class="italic">ness</span>
+                <h1 class="mt-10 text-pretty text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">
+                  Build <span class="text-emerald-700">Faster</span>. Scale <span class="text-emerald-700">Smarter</span>.
                 </h1>
                 <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-                  Whether you have an existing website or just an idea, we offer custom solutions tailored to your needs. From simple websites to complex web apps with end-to-end encryption, we can build it for you.
+                  From idea to launch in weeks, not months. We build blazing-fast, secure web applications that grow with your business — powered by Elixir's battle-tested technology.
                 </p>
-                <div class="mt-10 flex items-center gap-x-6">
+                <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <.link
                     navigate={~p"/new-inquiry"}
-                    class="rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                    class="group rounded-lg bg-emerald-700 px-6 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-emerald-600 hover:shadow-emerald-500/25 transition-all duration-200"
                   >
-                    New Inquiry
+                    Start Your Project
+                    <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
                   </.link>
-                  <.link
-                    href="https://github.com/moss-piglet/mosspiglet"
-                    class="text-sm/6 font-semibold text-gray-900"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    View on GitHub <span aria-hidden="true">→</span>
-                  </.link>
+                  <span class="text-sm text-gray-500 flex items-center gap-2">
+                    <.icon name="hero-check-circle" class="w-5 h-5 text-emerald-500" />
+                    Free 30-min consultation
+                  </span>
+                </div>
+                <div class="mt-12 flex items-center gap-x-6">
+                  <div class="flex -space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 ring-2 ring-white flex items-center justify-center text-emerald-800 font-semibold text-sm">
+                      JD
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-blue-100 ring-2 ring-white flex items-center justify-center text-blue-800 font-semibold text-sm">
+                      AK
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-purple-100 ring-2 ring-white flex items-center justify-center text-purple-800 font-semibold text-sm">
+                      MR
+                    </div>
+                  </div>
+                  <div class="text-sm text-gray-600">
+                    <span class="font-semibold text-gray-900">Trusted by founders</span>
+                    building the next big thing
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,12 +425,12 @@ defmodule MossPigletWeb.HomeLive.Index do
     <div class="bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
-          <h2 class="text-base/7 font-semibold text-emerald-600">Our process</h2>
+          <h2 class="text-base/7 font-semibold text-emerald-700">Our process</h2>
           <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            We guide you every step of the way
+            Simple steps, exceptional results
           </p>
           <p class="mt-6 text-lg/8 text-gray-600">
-            Building a website can feel daunting and opaque. That's why we guide you through every step so that you are always in the "know".
+            We keep things straightforward so you always know what's happening and what comes next.
           </p>
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -184,196 +438,52 @@ defmodule MossPigletWeb.HomeLive.Index do
             <div class="relative pl-16">
               <dt class="text-base/7 font-semibold text-gray-900">
                 <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-                    />
-                  </svg>
+                  <.icon name="hero-magnifying-glass" class="size-6 text-white" />
                 </div>
-                Consultation
+                1. Discovery
               </dt>
               <dd class="mt-2 text-base/7 text-gray-600">
-                This is the first stage of the process and includes a free 30 minute consultation that follows up your <.link
+                We start with a
+                <.link
                   navigate={~p"/new-inquiry"}
-                  class="text-brand-600 hover:text-brand-500 font-medium"
-                >new client inquiry</.link>.
+                  class="text-emerald-700 hover:text-emerald-600 font-medium"
+                >
+                  free consultation
+                </.link>
+                to understand your business, goals, and vision. We research your market and plan the path forward together.
               </dd>
             </div>
             <div class="relative pl-16">
               <dt class="text-base/7 font-semibold text-gray-900">
                 <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-                    />
-                  </svg>
+                  <.icon name="hero-pencil-square" class="size-6 text-white" />
                 </div>
-                Research and Planning
+                2. Design
               </dt>
               <dd class="mt-2 text-base/7 text-gray-600">
-                Market research and competitor analysis, structural definition, sitemap, customer flow, and layout of the project timeline and milestones.
+                We create wireframes, mockups, and content plans that bring your vision to life. You'll see and approve everything before we write a single line of code.
               </dd>
             </div>
             <div class="relative pl-16">
               <dt class="text-base/7 font-semibold text-gray-900">
                 <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
-                    />
-                  </svg>
+                  <.icon name="hero-code-bracket" class="size-6 text-white" />
                 </div>
-                Pre-production
+                3. Build
               </dt>
               <dd class="mt-2 text-base/7 text-gray-600">
-                Wireframing, UX design, mockups, and content creation. Depending on the project's needs, this stage can vary significantly in time.
+                We develop your project with fault-tolerant, scalable code that's responsive and privacy-first. Regular check-ins keep you informed every step of the way.
               </dd>
             </div>
             <div class="relative pl-16">
               <dt class="text-base/7 font-semibold text-gray-900">
                 <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
-                    />
-                  </svg>
+                  <.icon name="hero-rocket-launch" class="size-6 text-white" />
                 </div>
-                Production
+                4. Launch & Support
               </dt>
               <dd class="mt-2 text-base/7 text-gray-600">
-                Coding and testing of the project. We specialize in fault-tolerant, distributable, and scalable code that is responsive and privacy-first.
-              </dd>
-            </div>
-            <div class="relative pl-16">
-              <dt class="text-base/7 font-semibold text-gray-900">
-                <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
-                    />
-                  </svg>
-                </div>
-                Client Review
-              </dt>
-              <dd class="mt-2 text-base/7 text-gray-600">
-                Presentation of the finished project for final review. Any necessary adjustments and testing can be implemented.
-              </dd>
-            </div>
-            <div class="relative pl-16">
-              <dt class="text-base/7 font-semibold text-gray-900">
-                <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-                    />
-                  </svg>
-                </div>
-                Launch
-              </dt>
-              <dd class="mt-2 text-base/7 text-gray-600">
-                Project is launched and monitored for any immediate issues, encompassing any necessary hosting configuration.
-              </dd>
-            </div>
-            <div class="relative pl-16">
-              <dt class="text-base/7 font-semibold text-gray-900">
-                <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M16.712 4.33a9.027 9.027 0 0 1 1.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 0 0-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 0 1 0 9.424m-4.138-5.976a3.736 3.736 0 0 0-.88-1.388 3.737 3.737 0 0 0-1.388-.88m2.268 2.268a3.765 3.765 0 0 1 0 2.528m-2.268-4.796a3.765 3.765 0 0 0-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 0 1-1.388.88m2.268-2.268 4.138 3.448m0 0a9.027 9.027 0 0 1-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0-3.448-4.138m3.448 4.138a9.014 9.014 0 0 1-9.424 0m5.976-4.138a3.765 3.765 0 0 1-2.528 0m0 0a3.736 3.736 0 0 1-1.388-.88 3.737 3.737 0 0 1-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 0 1-1.652-1.306 9.027 9.027 0 0 1-1.306-1.652m0 0 4.138-3.448M4.33 16.712a9.014 9.014 0 0 1 0-9.424m4.138 5.976a3.765 3.765 0 0 1 0-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 0 1 1.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 0 0-1.652 1.306A9.025 9.025 0 0 0 4.33 7.288"
-                    />
-                  </svg>
-                </div>
-                Ongoing Support (optional)
-              </dt>
-              <dd class="mt-2 text-base/7 text-gray-600">
-                Provide ongoing support and maintenace, including updates, troubleshooting, and optional training for future employees.
-              </dd>
-            </div>
-            <div class="relative pl-16">
-              <dt class="text-base/7 font-semibold text-gray-900">
-                <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6 text-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
-                    />
-                  </svg>
-                </div>
-                Evaluation and Feedback
-              </dt>
-              <dd class="mt-2 text-base/7 text-gray-600">
-                Gather and share feedback from customers and client on the project's performance and recommend future enhancements.
+                We handle deployment, monitor for issues, and offer optional ongoing maintenance and support to keep everything running smoothly.
               </dd>
             </div>
           </dl>
@@ -390,12 +500,12 @@ defmodule MossPigletWeb.HomeLive.Index do
         <div class="mx-auto max-w-4xl">
           <h2 class="text-base/7 font-semibold text-emerald-400">Pricing</h2>
           <p class="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-            Choose the right price for you
+            Simple, transparent pricing
           </p>
         </div>
         <div class="relative mt-6">
           <p class="mx-auto max-w-2xl text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-            Choose to pay hourly or by retainer, whichever makes the most sense for your budget and project. Comprehensive invoicing is standard.
+            Choose the plan that fits your project. Both include our commitment to quality and clear communication.
           </p>
           <svg
             viewBox="0 0 1208 1024"
@@ -421,200 +531,136 @@ defmodule MossPigletWeb.HomeLive.Index do
         <div class="-mt-80">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2">
-              <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10">
+              <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10 hover:shadow-2xl transition-shadow duration-300">
                 <div>
-                  <h3 id="tier-hobby" class="text-base/7 font-semibold text-emerald-600">Time</h3>
+                  <h3 id="tier-hourly" class="text-base/7 font-semibold text-emerald-700">Hourly</h3>
                   <div class="mt-4 flex items-baseline gap-x-2">
-                    <span class="text-5xl font-semibold tracking-tight text-gray-900">$100</span>
-                    <span class="text-base/7 font-semibold text-gray-600">/hr</span>
+                    <span class="text-5xl font-bold tracking-tight text-gray-900">$100</span>
+                    <span class="text-base/7 font-semibold text-gray-600">/hour</span>
                   </div>
                   <p class="mt-6 text-base/7 text-gray-600">
-                    Pay by the hour for flexible project scopes and evolving requirements.
+                    Perfect for projects with evolving scope or shorter engagements.
                   </p>
                   <ul role="list" class="mt-10 space-y-4 text-sm/6 text-gray-600">
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-emerald-700" />
                       Pay-as-you-go flexibility
                     </li>
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Clear accountability
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-emerald-700" />
+                      Detailed time tracking
                     </li>
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Best for short-term projects
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-emerald-700" />
+                      Scale up or down anytime
                     </li>
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Adjustable workload
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-emerald-700" />
+                      Weekly progress reports
                     </li>
                   </ul>
                 </div>
                 <.link
                   navigate={~p"/new-inquiry"}
-                  aria-describedby="tier-retainer"
-                  class="mt-8 block rounded-md bg-emerald-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                  class="mt-8 block rounded-lg bg-white px-3.5 py-3 text-center text-sm/6 font-semibold text-emerald-700 ring-1 ring-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
                 >
-                  Inquire today
+                  Get Started
                 </.link>
               </div>
-              <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10">
+              <div class="relative flex flex-col justify-between rounded-3xl bg-emerald-700 p-8 shadow-xl sm:p-10 hover:shadow-2xl transition-shadow duration-300">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span class="inline-flex items-center rounded-full bg-emerald-100 px-4 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+                    Most Popular
+                  </span>
+                </div>
                 <div>
-                  <h3 id="tier-team" class="text-base/7 font-semibold text-emerald-600">Retainer</h3>
+                  <h3 id="tier-retainer" class="text-base/7 font-semibold text-emerald-50">
+                    Retainer
+                  </h3>
                   <div class="mt-4 flex items-baseline gap-x-2">
-                    <span class="text-5xl font-semibold tracking-tight text-gray-900">$5,000</span>
-                    <span class="text-base/7 font-semibold text-gray-600">/rt</span>
+                    <span class="text-5xl font-bold tracking-tight text-white">$5,000</span>
+                    <span class="text-base/7 font-semibold text-emerald-50">/retainer</span>
                   </div>
-                  <p class="mt-6 text-base/7 text-gray-600">
-                    Hire us on retainer, billed at our hourly rate, to facilitate the specific needs of your project.
+                  <p class="mt-6 text-base/7 text-emerald-50">
+                    Best value for serious projects. Priority access & comprehensive support included.
                   </p>
-                  <ul role="list" class="mt-10 space-y-4 text-sm/6 text-gray-600">
+                  <ul role="list" class="mt-10 space-y-4 text-sm/6 text-emerald-50">
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Predictable budgeting
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-white" />
+                      Everything in Hourly
                     </li>
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Priority access
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-white" />
+                      <span class="text-white">
+                        <strong class="text-white">Priority scheduling</strong>
+                      </span>
                     </li>
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Long-term relationship
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-white" />
+                      <span class="text-white">
+                        <strong class="text-white">Comprehensive support</strong> included
+                      </span>
                     </li>
                     <li class="flex gap-x-3">
-                      <svg
-                        class="h-6 w-5 flex-none text-emerald-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      Comprehensive support
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-white" />
+                      <span class="text-white">
+                        <strong class="text-white">Training</strong> for your team
+                      </span>
+                    </li>
+                    <li class="flex gap-x-3">
+                      <.icon name="hero-check" class="h-6 w-5 flex-none text-white" />
+                      Unused hours roll over
                     </li>
                   </ul>
                 </div>
                 <.link
                   navigate={~p"/new-inquiry"}
-                  aria-describedby="tier-retainer"
-                  class="mt-8 block rounded-md bg-emerald-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                  class="mt-8 block rounded-lg bg-white px-3.5 py-3 text-center text-sm/6 font-semibold text-emerald-700 shadow-lg hover:bg-emerald-50 transition-colors duration-200"
                 >
-                  Inquire today
+                  Get Started →
                 </.link>
               </div>
 
-              <div class="flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
+              <div class="flex flex-col items-start gap-x-8 gap-y-6 rounded-2xl bg-gray-50 p-8 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
                 <div class="lg:min-w-0 lg:flex-1">
-                  <h3 class="text-base/7 font-semibold text-emerald-600">Discounted Support</h3>
-                  <p class="mt-1 text-base/7 text-gray-600">
-                    We offer hourly clients a discount on ongoing maintenance and support. For comprehensive support coverage and training, clients can switch to paying by retainer.
+                  <h3 class="text-lg font-semibold text-gray-900">
+                    <.icon
+                      name="hero-wrench-screwdriver"
+                      class="w-5 h-5 inline-block mr-2 text-emerald-700"
+                    /> Discounted Support
+                  </h3>
+                  <p class="mt-2 text-base/7 text-gray-600">
+                    Hourly clients get discounted ongoing maintenance. Need more? Switch to retainer anytime for comprehensive coverage.
                   </p>
                 </div>
-                <span class="rounded-md px-3.5 py-2 text-sm/6 font-semibold text-emerald-600 ring-1 ring-inset ring-emerald-200 hover:ring-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">
-                  $750 /mo
-                </span>
+                <div class="text-center">
+                  <span class="text-2xl font-bold text-gray-900">$750</span>
+                  <span class="text-gray-500">/month</span>
+                </div>
               </div>
-              <div class="flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
+              <div class="flex flex-col items-start gap-x-8 gap-y-6 rounded-2xl bg-gray-50 p-8 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
                 <div class="lg:min-w-0 lg:flex-1">
-                  <h3 class="text-base/7 font-semibold text-emerald-600">One Bill Service</h3>
-
-                  <p class="mt-1 text-base/7 text-gray-600">
-                    We can handle the payments for all the services required to operate your website so you can stay focused on running your business.
+                  <h3 class="text-lg font-semibold text-gray-900">
+                    <.icon
+                      name="hero-document-text"
+                      class="w-5 h-5 inline-block mr-2 text-emerald-700"
+                    /> One Bill Service
+                  </h3>
+                  <p class="mt-2 text-base/7 text-gray-600">
+                    We handle all your website's vendor payments — hosting, domains, services. One invoice, zero hassle.
                   </p>
                 </div>
-                <span class="rounded-md px-3.5 py-2 text-sm/6 font-semibold text-emerald-600 ring-1 ring-inset ring-emerald-200 hover:ring-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">
-                  $250 + 5%
-                </span>
+                <div class="text-center">
+                  <span class="text-2xl font-bold text-gray-900">$250</span>
+                  <span class="text-gray-500">+ 5%</span>
+                </div>
               </div>
+            </div>
+            <div class="mt-10 flex justify-center">
+              <p class="text-sm text-gray-500 flex items-center gap-2">
+                <.icon name="hero-shield-check" class="w-5 h-5 text-emerald-500" />
+                100% satisfaction guarantee · No long-term contracts · Cancel anytime
+              </p>
             </div>
           </div>
         </div>
@@ -635,7 +681,7 @@ defmodule MossPigletWeb.HomeLive.Index do
             Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
             <.link
               href="mailto:support@mosspiglet.dev"
-              class="font-semibold text-emerald-600 hover:text-emerald-500"
+              class="font-semibold text-emerald-700 hover:text-emerald-600"
             >
               sending us an email
             </.link>
@@ -735,20 +781,115 @@ defmodule MossPigletWeb.HomeLive.Index do
 
   def footer(assigns) do
     ~H"""
-    <footer class="bg-white">
-      <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav
-          class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
-          aria-label="Footer"
-        >
-        </nav>
-        <div class="mt-16 flex justify-center gap-x-10">
-          <span class="sr-only">Moss Piglet</span>
-          <img src={~p"/images/logo.svg"} class="h-12" />
+    <footer class="bg-gray-900">
+      <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="space-y-8">
+            <img src={~p"/images/logo.svg"} class="h-10 brightness-0 invert" alt="Moss Piglet" />
+            <p class="text-sm/6 text-gray-400">
+              Building fast, scalable web applications with Elixir and Phoenix. From idea to launch, we've got you covered.
+            </p>
+            <div class="flex gap-x-6">
+              <a
+                href="https://github.com/moss-piglet"
+                target="_blank"
+                rel="noopener"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <span class="sr-only">GitHub</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="mailto:hello@mosspiglet.dev"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <span class="sr-only">Email</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold text-white">Services</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li><span class="text-sm text-gray-400">Web Applications</span></li>
+                  <li><span class="text-sm text-gray-400">Marketing Sites</span></li>
+                  <li><span class="text-sm text-gray-400">APIs & Backends</span></li>
+                  <li><span class="text-sm text-gray-400">Consulting</span></li>
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold text-white">Company</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <.link
+                      navigate={~p"/new-inquiry"}
+                      class="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      Contact
+                    </.link>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/moss-piglet/mosspiglet"
+                      target="_blank"
+                      rel="noopener"
+                      class="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      GitHub
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold text-white">Support</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="mailto:support@mosspiglet.dev"
+                      class="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      support@mosspiglet.dev
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold text-white">Legal</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li><span class="text-sm text-gray-400">Privacy Policy</span></li>
+                  <li><span class="text-sm text-gray-400">Terms of Service</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="mt-10 text-center text-sm/6 text-gray-600">
-          &copy; 2025 Moss Piglet, Corporation. A Public Benefit company. All rights reserved.
-        </p>
+        <div class="mt-16 border-t border-gray-800 pt-8 sm:mt-20 lg:mt-24">
+          <p class="text-xs text-gray-400 text-center">
+            &copy; 2025 Moss Piglet, Corporation. A Public Benefit company. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
     """

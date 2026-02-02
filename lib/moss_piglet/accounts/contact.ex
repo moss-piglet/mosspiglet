@@ -62,25 +62,9 @@ defmodule MossPiglet.Accounts.Contact do
     ])
     |> validate_required([
       :name,
-      :company,
       :email,
       :goal,
-      :features,
-      :audience,
-      :branding,
-      :admire,
-      :style,
-      :content,
-      :assistance,
-      :key_info,
-      :cms,
-      :integrations,
-      :hosting,
-      :budget,
-      :milestones,
-      :future_updates,
-      :extra_info,
-      :referral
+      :budget
     ])
     |> validate_email()
   end
