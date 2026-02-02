@@ -3,6 +3,6 @@ defmodule MossPigletWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
-    assert html_response(conn, 200) =~ "Supercharge your web"
+    assert html_response(conn, 200) =~ "idea to launch in weeks"
   end
 end
