@@ -878,8 +878,22 @@ defmodule MossPigletWeb.HomeLive.Index do
               <div class="mt-10 md:mt-0">
                 <h3 class="text-sm font-semibold text-white">Legal</h3>
                 <ul role="list" class="mt-6 space-y-4">
-                  <li><span class="text-sm text-gray-400">Privacy Policy</span></li>
-                  <li><span class="text-sm text-gray-400">Terms of Service</span></li>
+                  <li>
+                    <.link
+                      navigate={~p"/privacy"}
+                      class="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      Privacy Policy
+                    </.link>
+                  </li>
+                  <li>
+                    <.link
+                      navigate={~p"/terms"}
+                      class="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      Terms of Service
+                    </.link>
+                  </li>
                 </ul>
               </div>
             </div>

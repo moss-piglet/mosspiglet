@@ -20,6 +20,8 @@ defmodule MossPigletWeb.Router do
     # get "/", PageController, :home
     live "/", HomeLive.Index
     live "/new-inquiry", InquiryLive.Index
+    live "/privacy", PrivacyLive
+    live "/terms", TermsLive
   end
 
   # Other scopes may use custom stacks.
