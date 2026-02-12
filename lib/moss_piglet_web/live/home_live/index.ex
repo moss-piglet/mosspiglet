@@ -23,7 +23,7 @@ defmodule MossPigletWeb.HomeLive.Index do
 
     <.our_process assigns={assigns} />
 
-    <.testimonials assigns={assigns} />
+    <%!-- <.testimonials assigns={assigns} /> --%>
 
     <.pricing assigns={assigns} />
 
@@ -341,6 +341,7 @@ defmodule MossPigletWeb.HomeLive.Index do
                     Free 30-min consultation
                   </span>
                 </div>
+                <%!-- Testimonials
                 <div class="mt-12 flex items-center gap-x-6">
                   <div class="flex -space-x-2">
                     <div class="w-10 h-10 rounded-full bg-emerald-100 ring-2 ring-white flex items-center justify-center text-emerald-800 font-semibold text-sm">
@@ -358,6 +359,7 @@ defmodule MossPigletWeb.HomeLive.Index do
                     building the next big thing
                   </div>
                 </div>
+                --%>
               </div>
             </div>
           </div>
