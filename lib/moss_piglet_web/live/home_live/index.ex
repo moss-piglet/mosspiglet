@@ -295,7 +295,7 @@ defmodule MossPigletWeb.HomeLive.Index do
               <div class="max-w-lg">
                 <div class="mt-24 sm:mt-32 lg:mt-16">
                   <a
-                    href="https://mosslet.com"
+                    href="https://metamorphic.app"
                     target="_blank"
                     rel="noopener"
                     class="inline-flex space-x-6"
@@ -304,7 +304,7 @@ defmodule MossPigletWeb.HomeLive.Index do
                       What's new
                     </span>
                     <span class="inline-flex items-center space-x-2 text-xs/6 sm:text-sm/6 font-medium text-gray-600 group">
-                      <span class="group-hover:text-emerald-700">Shipped Mosslet v0.17 🚀</span>
+                      <span class="group-hover:text-emerald-700">Shipped Metamorphic 🚀</span>
                       <svg
                         class="size-5 text-gray-400 group-hover:text-emerald-700"
                         viewBox="0 0 20 20"
