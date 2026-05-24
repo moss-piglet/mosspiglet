@@ -327,6 +327,14 @@ defmodule MossPigletWeb.HomeLive.Index do
                 >
                   Crates.io <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
                 </a>
+                <a
+                  href="https://www.npmjs.com/package/@f0rest8/metamorphic-crypto"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                >
+                  npm <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
+                </a>
               </div>
             </div>
 
