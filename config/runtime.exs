@@ -56,7 +56,7 @@ if config_env() == :prod do
   config :moss_piglet, MossPigletWeb.Endpoint,
     adapter: Bandit.PhoenixAdapter,
     url: [host: host, port: 443, scheme: "https"],
-    check_origin: true,
+    check_origin: ["https://#{host}", "https://www.#{host}"],
     live_view: [
       signing_salt: System.get_env("LIVE_VIEW_SIGNING_SALT"),
       encryption_salt: System.get_env("LIVE_VIEW_ENCRYPTION_SALT")
