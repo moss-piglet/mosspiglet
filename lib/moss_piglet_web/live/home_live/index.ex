@@ -284,7 +284,7 @@ defmodule MossPigletWeb.HomeLive.Index do
                 </div>
               </div>
               <p class="mt-4 text-base/7 text-gray-600">
-                The world's first post-quantum encrypted social network. Open source, Bluesky/ATProto sync.
+                The world's first zero-knowledge post-quantum encrypted social network. Open source, Bluesky/ATProto sync.
               </p>
               <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 group-hover:gap-2 transition-all duration-200">
                 Try Mosslet <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
