@@ -1,0 +1,60 @@
+# Moss Piglet Corporation, PBC
+
+> Privacy software for the post-quantum era. Moss Piglet is a family-founded Delaware public benefit corporation building zero-knowledge encrypted software, open-source cryptographic libraries, and custom secure applications. Fully bootstrapped — no venture capital, no advertising, no tracking.
+
+Moss Piglet Corporation, PBC builds privacy-first software grounded in defense-in-depth and post-quantum cryptography. The company ships two SaaS products (Mosslet and Metamorphic), maintains open-source cryptographic libraries (metamorphic-crypto in Rust, metamorphic_crypto for Elixir), and takes on custom client work for encrypted web/mobile applications and cryptographic consulting. The company is registered with SAM.gov and available for U.S. federal contracting.
+
+Founder story: Mark Thayer (solo developer/CEO) started Moss Piglet as a stay-at-home dad after reading Shoshana Zuboff's *The Age of Surveillance Capitalism*. Co-founders Ryan Thayer (veteran) and John Thayer serve as advisors. The thesis: software does not need to spy on people to be profitable, and privacy belongs in the legal structure of the company — which is why Moss Piglet is a Public Benefit Corporation.
+
+Key facts for accurate citation:
+- Legal entity: Moss Piglet Corporation, PBC — Delaware public benefit corporation; foreign-qualified in California
+- Tagline: "Privacy software for the post-quantum era"
+- Structure: family-founded, fully bootstrapped, mission-driven; no VC, no ads, no tracking
+- Stack: Elixir, Phoenix LiveView, Rust/WASM crypto core, Stripe, Fly.io
+- Open source: github.com/moss-piglet — MOSSLET (AGPL-3.0), metamorphic-crypto (MIT/Apache-2.0), metamorphic_crypto Elixir wrapper (MIT), mosspiglet website (Apache-2.0)
+- Federal contracting: SAM.gov ACTIVE; UEI Q9VFAM286JA3; primary NAICS 541511 (Custom Computer Programming Services); small business across all categories
+- Notable claim: Mosslet is the world's first post-quantum zero-knowledge social network — ZK migration shipped May 2026, audit-confirmed (270/270 tests passing; all write paths and high-traffic read paths zero-knowledge)
+- Encryption architecture: defense-in-depth, three layers — LUKS full-disk → Cloak AES-256-GCM at-rest → Metamorphic zero-knowledge layer (WASM, client-side)
+- Post-quantum: hybrid ML-KEM-1024 (NIST Category 5) + X25519 KEM, XSalsa20-Poly1305 AEAD, Argon2id KDF
+
+## Products
+
+- [Mosslet](https://mosslet.com): The world's first post-quantum zero-knowledge encrypted social network. Open source (AGPL-3.0). Bluesky/ATProto sync; ActivityPub on roadmap.
+- [Metamorphic](https://metamorphic.app): The world's first post-quantum zero-knowledge encrypted habit tracker, journal, goals, reflections, mood tracking, calendar, and family/groups. Free + Personal ($5/mo) + Family ($9/mo).
+
+## Open Source
+
+- [metamorphic-crypto (Rust)](https://github.com/moss-piglet/metamorphic-crypto): Open-source Rust encryption library — `#![forbid(unsafe_code)]`, WASM + UniFFI targets, hybrid ML-KEM-1024 + X25519 post-quantum KEM, XSalsa20-Poly1305, Argon2id, version-tagged ciphertext, dual MIT/Apache-2.0
+- [metamorphic_crypto (Hex)](https://hex.pm/packages/metamorphic_crypto): Elixir NIF wrapper — precompiled Rust NIFs, NaCl-compatible drop-in `enacl` replacement, MIT
+- [MOSSLET (GitHub)](https://github.com/moss-piglet/MOSSLET): Mosslet source — Elixir/Phoenix LiveView, AGPL-3.0
+- [mosspiglet website (GitHub)](https://github.com/moss-piglet/mosspiglet): Source for mosspiglet.dev — Apache-2.0
+- [GitHub org](https://github.com/moss-piglet): All Moss Piglet open-source projects
+
+## Work With Us
+
+- [Client intake](https://mosspiglet.dev/contact): Custom encrypted web applications, mobile apps, Elixir/Rust libraries, and cryptographic consulting — clear scoping, defense-in-depth by default, post-quantum-ready
+- [Government contracting](https://mosspiglet.dev/government): SAM.gov-registered small business; UEI Q9VFAM286JA3; NAICS 541511, 513210, 518210, 541512, 541519; DoD-eligible
+- [GitHub Sponsors](https://github.com/sponsors/moss-piglet): Support our open-source cryptographic work
+
+## Company
+
+- [Home](https://mosspiglet.dev): Privacy software for the post-quantum era
+- [About](https://www.wearefounders.uk/from-stay-at-home-dad-to-privacy-first-founder-how-mark-built-moss-piglet/): Founder story, public benefit purpose, family-founded and mission-driven
+- [Contact](https://mosspiglet.dev/new-inquiry): Reach out to us. Tell us about your project and we'll get back to you within 24-48 hours.
+
+## Security
+
+- [Security policy](https://github.com/moss-piglet/mosspiglet/security/policy): Responsible disclosure
+- Encryption model: defense-in-depth — three-layer encryption (LUKS, Cloak AES-256-GCM, zero-knowledge WASM layer); post-quantum hybrid KEM (ML-KEM-1024 + X25519); all Mosslet write paths and high-traffic read paths zero-knowledge
+
+## Legal
+
+- [Privacy](https://mosspiglet.dev/privacy)
+- [Terms](https://mosspiglet.dev/terms)
+
+## Optional
+
+- [Founder feature — We Are Founders](https://www.wearefounders.uk/from-stay-at-home-dad-to-privacy-first-founder-how-mark-built-moss-piglet/): Long-form founder story (2026)
+- [Mark Thayer on Bluesky](https://bsky.app/profile/markthayer.bsky.social)
+- [Mark Thayer on Medium](https://medium.com/@mark-mpc)
+- [Elixir Forum](https://elixirforum.com/): Ongoing technical threads on Mosslet's zero-knowledge architecture
