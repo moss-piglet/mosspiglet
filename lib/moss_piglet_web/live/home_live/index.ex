@@ -374,6 +374,90 @@ defmodule MossPigletWeb.HomeLive.Index do
                 </a>
               </div>
             </div>
+
+            <%!-- metamorphic-log (Rust) --%>
+            <div
+              id="product-metamorphic-log-rust"
+              class="relative flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-shadow duration-300"
+            >
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gray-900">
+                  <.icon name="hero-queue-list" class="h-7 w-7 text-white" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">metamorphic-log</h3>
+                  <span class="text-xs font-medium text-gray-500">
+                    Dual MIT / Apache-2.0
+                  </span>
+                </div>
+              </div>
+              <p class="mt-4 flex-auto text-base/7 text-gray-600">
+                Open-source Rust transparency-log engine. RFC 6962 Merkle trees, tlog-tiles, hybrid post-quantum checkpoints, and CONIKS-style key transparency. Compiles to WASM.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/moss-piglet/metamorphic-logcr"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                >
+                  GitHub <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
+                </a>
+                <a
+                  href="https://crates.io/crates/metamorphic-log"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                >
+                  Crates.io <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.npmjs.com/package/@f0rest8/metamorphic-log"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                >
+                  npm <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <%!-- metamorphic_log (Elixir) --%>
+            <div
+              id="product-metamorphic-log-elixir"
+              class="relative flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-shadow duration-300"
+            >
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-700">
+                  <.icon name="hero-rectangle-stack" class="h-7 w-7 text-white" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">metamorphic_log</h3>
+                  <span class="text-xs font-medium text-gray-500">Elixir NIF wrapper</span>
+                </div>
+              </div>
+              <p class="mt-4 flex-auto text-base/7 text-gray-600">
+                Precompiled Elixir NIF client for the metamorphic-log engine. No Rust toolchain required. Append, verify inclusion/consistency proofs, and validate checkpoints.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/moss-piglet/metamorphic_log"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                >
+                  GitHub <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
+                </a>
+                <a
+                  href="https://hex.pm/packages/metamorphic_log"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
+                >
+                  Hex.pm <.icon name="hero-arrow-top-right-on-square-mini" class="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

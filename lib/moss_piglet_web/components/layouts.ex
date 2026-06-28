@@ -10,8 +10,6 @@ defmodule MossPigletWeb.Layouts do
   """
   use MossPigletWeb, :html
 
-  require Logger
-
   embed_templates "layouts/*"
 
   def app_name, do: MossPiglet.config(:app_name)
