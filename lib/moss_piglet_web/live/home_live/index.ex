@@ -396,7 +396,7 @@ defmodule MossPigletWeb.HomeLive.Index do
               </p>
               <div class="mt-6 flex flex-wrap items-center gap-4">
                 <a
-                  href="https://github.com/moss-piglet/metamorphic-logcr"
+                  href="https://github.com/moss-piglet/metamorphic-log"
                   target="_blank"
                   rel="noopener"
                   class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors"
